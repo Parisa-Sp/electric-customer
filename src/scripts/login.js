@@ -14,6 +14,6 @@ button.onclick = (e) =>{
 
     setTimeout(()=>{
         btnLoading.classList.toggle("d-none");
-        btnText.innerHTML = "ورود به پنل";
+        window.location.href = "panel_financialInfo.html"
     }, 2000);
 }
