@@ -1,0 +1,17 @@
+body {
+  background-image: url("../assets/images/bg-login.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  height: 100vh;
+}
+
+#form-container {
+  width: 100%;
+}
+
+@media screen and (min-width: 769px) {
+  #form-container {
+    width: 35%;
+  }
+}
