@@ -23,9 +23,3 @@
   src: url("../assets/fonts/IRANSansWeb_Bold.woff") format("woff");
   font-weight: bold;
 }
-
-html,
-body {
-  font-family: IranSans;
-  font-weight: normal;
-}
