@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="IR">
+  <head>
+    <title>پنل مدیریت | اطلاعات مالی</title>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css"
+      integrity="sha384-nU14brUcp6StFntEOOEBvcJm4huWjB0OcIeQ3fltAfSmuZFrkAif0T+UtNGlKKQv"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="stylesheets/_fonts.css" />
+    <link rel="stylesheet" href="stylesheets/_global.css" />
+    <link rel="stylesheet" href="stylesheets/panel/financialInfo.css" />
+  </head>
+  <body>
+    <div class="container-fluid">
+
+      <nav class="navbar d-md-none bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">پنل مدیریت</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <div class="icon mt-3 selected">
+                <i class="fa-solid fa-coins"></i>
+                <span>فیش های حقوقی</span>
+              </div>
+  
+              <div
+                class="icon disabled"
+                data-bs-toggle="tooltip"
+                data-bs-placement="bottom"
+                data-bs-title="در دست ساخت می باشد!"
+              >
+                <i class="fa-solid fa-users"></i>
+                <span>مدیریت کاربران</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <div class="row">
+        <div class="p-0 d-none d-md-block" id="sidebar-container">
+          <div class="sidebar p-3 pt-3">
+            <div class="icon" id="menu-button">
+              <i class="fa-solid fa-bars-staggered"></i>
+              <span>بسته شدن منو</span>
+            </div>
+
+            <div class="icon mt-3 selected">
+              <i class="fa-solid fa-coins"></i>
+              <span>فیش های حقوقی</span>
+            </div>
+
+            <div
+              class="icon disabled"
+              data-bs-toggle="tooltip"
+              data-bs-placement="bottom"
+              data-bs-title="در دست ساخت می باشد!"
+            >
+              <i class="fa-solid fa-users"></i>
+              <span>مدیریت کاربران</span>
+            </div>
+          </div>
+        </div>
+        <div class="col p-0" id="body-container">
+          <div class="body p-1 p-md-5">
+            <div class="panelCard shadow-sm rounded-2 mt-0 mt-md-5 p-3 p-md-4">
+              <div class="d-flex justify-content-between align-items-center">
+                <h4>لیست فیش های حقوقی ثبت شده</h4>
+
+                <button
+                  class="btn btn-outline-secondary d-none d-md-block"
+                  data-bs-toggle="modal"
+                  data-bs-target="#addModal"
+                  >اضافه کردن فیش</button
+                >
+              </div>
+
+              <hr />
+
+              <div class="input-group mb-3" id="searchContainer">
+                <button class="btn btn-outline-secondary d-flex" type="button">
+                  <i class="fa-solid fa-search m-auto"></i>
+                </button>
+                <input type="text" class="form-control" placeholder="کد ملی" />
+              </div>
+
+              <div class="overflow-auto">
+                <table class="table table-striped table-hover">
+                  <tr>
+                    <th>شمارنده</th>
+                    <th>کد ملی</th>
+                    <th>تاریخ آخرین ویرایش</th>
+                    <th>تعداد فیش</th>
+                    <th>عملیات</th>
+                  </tr>
+
+                  <tr>
+                    <td>1</td>
+                    <td class="persian-number">3920920376</td>
+                    <td class="persian-number">1402/08/09 12:32:28</td>
+                    <td class="persian-number">5</td>
+                    <th>
+                      <div
+                        class="d-flex justify-content-start align-items-center gap-3"
+                      >
+                        <button
+                          class="btn btn-outline-success d-flex"
+                          data-bs-toggle="modal"
+                          data-bs-target="#viewModal"
+                        >
+                          <i class="fa-solid fa-eye m-auto"></i>
+                        </button>
+
+                        <button
+                          class="btn btn-outline-danger d-flex"
+                          data-bs-toggle="modal"
+                          data-bs-target="#removeModal"
+                        >
+                          <i class="fa-solid fa-trash m-auto"></i>
+                        </button>
+                      </div>
+                    </th>
+                  </tr>
+                </table>
+              </div>
+              <nav class="mt-3 mt-md-0">
+                <ul class="pagination">
+                  <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Previous">
+                      <span aria-hidden="true">&laquo;</span>
+                    </a>
+                  </li>
+                  <li class="page-item"
+                    ><a class="page-link persian-number" href="#">1</a></li
+                  >
+                  <li class="page-item"
+                    ><a class="page-link persian-number" href="#">2</a></li
+                  >
+                  <li class="page-item"
+                    ><a class="page-link persian-number" href="#">3</a></li
+                  >
+                  <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Next">
+                      <span aria-hidden="true">&raquo;</span>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="position-fixed bottom-0 end-0 d-md-none mb-5 me-4">
+      <button class="btn btn-secondary rounded-circle d-flex shadow" style="width: 36px; height: 36px;" data-bs-toggle="modal" data-bs-target="#addModal">
+        <i class="fa-solid fa-plus m-auto"></i>
+      </button>
+    </div>
+
+    <div class="modal fade" id="viewModal" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel"
+              >فیش های حقوقی ثبت شده</h1
+            >
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <a href="#" class="btn btn-link d-block">۱۴۰۲/۰۲/۳۱ ۱۳:۵۴:۰۲</a>
+            <a href="#" class="btn btn-link d-block">۱۴۰۲/۰۲/۳۱ ۱۳:۵۴:۰۲</a>
+            <a href="#" class="btn btn-link d-block">۱۴۰۲/۰۲/۳۱ ۱۳:۵۴:۰۲</a>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+              >بستن</button
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="removeModal" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel"
+              >لیست فیش های حقوقی برای حذف</h1
+            >
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="form-check d-flex align-items-center">
+              <input
+                class="form-check-input mb-2"
+                type="checkbox"
+                value=""
+                id="flexCheckDefault"
+              />
+              <label class="form-check-label" for="flexCheckDefault">
+                <a href="#" target="_blank" class="btn btn-link d-block"
+                  >۱۴۰۲/۰۲/۳۱ ۱۳:۵۴:۰۲</a
+                >
+              </label>
+            </div>
+
+            <div class="form-check d-flex align-items-center">
+              <input
+                class="form-check-input mb-2"
+                type="checkbox"
+                value=""
+                id="flexCheckDefault"
+              />
+              <label class="form-check-label" for="flexCheckDefault">
+                <a href="#" target="_blank" class="btn btn-link d-block"
+                  >۱۴۰۲/۰۲/۳۱ ۱۳:۵۴:۰۲</a
+                >
+              </label>
+            </div>
+
+            <div class="form-check d-flex align-items-center">
+              <input
+                class="form-check-input mb-2"
+                type="checkbox"
+                value=""
+                id="flexCheckDefault"
+              />
+              <label class="form-check-label" for="flexCheckDefault">
+                <a href="#" target="_blank" class="btn btn-link d-block"
+                  >۱۴۰۲/۰۲/۳۱ ۱۳:۵۴:۰۲</a
+                >
+              </label>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+              >بستن</button
+            >
+            <button
+              type="button"
+              class="btn btn-outline-danger"
+              data-bs-dismiss="modal"
+              >حذف</button
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="addModal" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel"
+              >افزودن فیش حقوقی</h1
+            >
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="mb-3">
+              <label for="formFile" class="form-label"> کدملی </label>
+
+              <input
+                class="form-control"
+                type="text"
+                placeholder="3900329456"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="formFile" class="form-label"> تصویر فیش </label>
+              <input class="form-control" type="file" id="formFile" />
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+              >بستن</button
+            >
+
+            <button
+              type="button"
+              class="btn btn-outline-success"
+              data-bs-dismiss="modal"
+              >افزودن</button
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://kit.fontawesome.com/b22ac7f979.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <script src="scripts/_number.js"></script>
+    <script src="scripts/panel/financialInfo.js"></script>
+  </body>
+</html>
